@@ -1,2 +1,3 @@
+include ':ajayLibrary'
 include ':app'
 rootProject.name = "AjayLib"
