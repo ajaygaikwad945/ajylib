@@ -45,7 +45,7 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
-public class Utilities {
+public class AjyUtil {
 
 
     //utility-1
