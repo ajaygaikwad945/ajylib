@@ -2,14 +2,7 @@
 
 How to import 
 
-Add it in your root build.gradle at the end of repositories
-
-allprojects {
-	repositories {
-		...
-		maven { url 'https://jitpack.io' }
-	}
-}
+implementation 'com.github.pratikbutani:MultiSelectSpinner:f47c0dadea'
 
 
 
