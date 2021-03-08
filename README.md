@@ -2,7 +2,8 @@
 
 How to import 
 
-implementation 'com.github.pratikbutani:MultiSelectSpinner:f47c0dadea'
+implementation 'com.github.ajaygaikwad945:ajylib:1.0.2'
+
 
 
 
