@@ -1,7 +1,5 @@
 # ajylib (All in one Library)
 
-*Time Format Conversion
-
 1-Remove array braces of string
 
 2-Make List of comma seperated string
@@ -23,3 +21,5 @@
 10-List of time sorting
 
 11-Check url is reachable or not
+
+12-Time Format Conversion
