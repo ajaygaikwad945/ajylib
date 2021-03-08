@@ -1,5 +1,18 @@
 # ajylib (All in one Library)
 
+How to import 
+
+Add it in your root build.gradle at the end of repositories
+
+allprojects {
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
+	}
+}
+
+
+
 1-Remove array braces of string
 
 2-Make List of comma seperated string
