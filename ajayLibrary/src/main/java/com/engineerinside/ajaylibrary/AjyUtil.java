@@ -711,29 +711,8 @@ public class AjyUtil {
         return "9";
     }
 
-    public static void showToast(Activity context,String msg) {
 
-        LayoutInflater li = context.getLayoutInflater();
-        View layout = li.inflate(R.layout.toast_layout, (ViewGroup) context.findViewById(R.id.custom_toast_layout));
-        TextView custom_toast_message = layout.findViewById(R.id.custom_toast_message);
-        custom_toast_message.setText(msg);
-        final Toast toast = new Toast(context);
-        //toast.setDuration(Toast.LENGTH_SHORT);
-        //toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-        toast.setView(layout);
-        toast.show();
-
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                toast.cancel();
-            }
-        }, 1000);
-
-    }
-
-    public static void ToastError(Activity context,String msg) {
+    public static void toastError(Activity context,String msg) {
 
         LayoutInflater li = context.getLayoutInflater();
         View layout = li.inflate(R.layout.toast_layout_error, (ViewGroup) context.findViewById(R.id.custom_toast_layout));
@@ -755,7 +734,7 @@ public class AjyUtil {
 
     }
 
-    public static void ToastError(Activity context,String msg,int time_in_millis) {
+    public static void toastError(Activity context,String msg,int time_in_millis) {
 
         LayoutInflater li = context.getLayoutInflater();
         View layout = li.inflate(R.layout.toast_layout_error, (ViewGroup) context.findViewById(R.id.custom_toast_layout));
@@ -777,7 +756,7 @@ public class AjyUtil {
 
     }
 
-    public static void ToastWarning(Activity context,String msg) {
+    public static void toastWarning(Activity context,String msg) {
 
         LayoutInflater li = context.getLayoutInflater();
         //View layout = li.inflate(R.layout.toast_layout_warning, (ViewGroup) context.findViewById(R.id.custom_toast_layout));
@@ -800,7 +779,7 @@ public class AjyUtil {
 
     }
 
-    public static void ToastWarning(Activity context,String msg,int time_in_millis) {
+    public static void toastWarning(Activity context,String msg,int time_in_millis) {
 
         LayoutInflater li = context.getLayoutInflater();
         View layout = li.inflate(R.layout.toast_layout_warning, (ViewGroup) context.findViewById(R.id.custom_toast_layout));
@@ -822,7 +801,7 @@ public class AjyUtil {
 
     }
 
-    public static void ToastSuccess(Activity context,String msg) {
+    public static void toastSuccess(Activity context,String msg) {
 
         LayoutInflater li = context.getLayoutInflater();
         View layout = li.inflate(R.layout.toast_layout_success, (ViewGroup) context.findViewById(R.id.custom_toast_layout));
@@ -844,7 +823,7 @@ public class AjyUtil {
 
     }
 
-    public static void ToastSuccess(Activity context,String msg,int time_in_millis) {
+    public static void toastSuccess(Activity context,String msg,int time_in_millis) {
 
         LayoutInflater li = context.getLayoutInflater();
         View layout = li.inflate(R.layout.toast_layout_success, (ViewGroup) context.findViewById(R.id.custom_toast_layout));
@@ -866,7 +845,7 @@ public class AjyUtil {
 
     }
     
-    public static  void ToastNormal(Activity context,String msg){
+    public static  void toastNormal(Activity context,String msg){
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
     }
     
