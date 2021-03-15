@@ -2,11 +2,13 @@
 
 ## How to import 
 
+### Add below dependency
+
 ``` implementation 'com.github.ajaygaikwad945:ajylib:1.0.2' ```
 
 
 
-
+### Usage --
 1-Remove array braces of string
 
 2-Make List of comma seperated string
