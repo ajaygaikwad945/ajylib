@@ -848,6 +848,28 @@ public class AjyUtil {
     public static  void toastNormal(Activity context,String msg){
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
     }
+
+    public static boolean containsIgnoreCase(List<String> list, String soughtFor) {
+        for (String current : list) {
+            if (current.equalsIgnoreCase(soughtFor)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean coreContains(List<String> list, String soughtFor) {
+        for (String current : list) {
+
+            String currentNew = current.replaceAll(" ", "");
+            String soughtForNew = soughtFor.replaceAll(" ", "");
+
+            if (currentNew.equalsIgnoreCase(soughtForNew)) {
+                return true;
+            }
+        }
+        return false;
+    }
     
     
 }
