@@ -1,12 +1,14 @@
 # ajylib (All in one Library)
 
-How to import 
+## How to import 
 
-implementation 'com.github.ajaygaikwad945:ajylib:1.0.2'
+### Add below dependency
+
+``` implementation 'com.github.ajaygaikwad945:ajylib:1.0.2' ```
 
 
 
-
+### Usage --
 1-Remove array braces of string
 
 2-Make List of comma seperated string
@@ -30,3 +32,5 @@ implementation 'com.github.ajaygaikwad945:ajylib:1.0.2'
 11-Check url is reachable or not
 
 12-Time Format Conversion
+
+13-Colorful Toast 
