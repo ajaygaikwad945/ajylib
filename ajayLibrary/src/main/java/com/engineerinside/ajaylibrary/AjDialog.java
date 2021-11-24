@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class AjyDialog extends Dialog {
+public class AjDialog extends Dialog {
 
         private String message="";
         private String title="";
@@ -22,15 +22,15 @@ public class AjyDialog extends Dialog {
         private View.OnClickListener btNoListener=null;
         private View.OnClickListener btnClose=null;
 
-        public AjyDialog(Context context) {
+        public AjDialog(Context context) {
             super(context,R.style.CustomAlertDialog);
         }
 
-        public AjyDialog(Context context, int themeResId) {
+        public AjDialog(Context context, int themeResId) {
             super(context, R.style.CustomAlertDialog);
         }
 
-        protected AjyDialog(Context context, boolean cancelable, OnCancelListener cancelListener) {
+        protected AjDialog(Context context, boolean cancelable, OnCancelListener cancelListener) {
             super(context, cancelable, cancelListener);
         }
 

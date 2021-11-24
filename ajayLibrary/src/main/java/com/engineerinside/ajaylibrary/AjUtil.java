@@ -44,12 +44,12 @@ import java.util.List;
 
 import com.engineerinside.ajaylibrary.R;
 
-public class AjyUtil {
+public class AjUtil {
 
 
     //utility-1
     //time format conversion with string value of date,input pattern and output pattern
-    public static String timeConversion(Context context, String input, String inputPattern, String outputPattern){
+    public static String timeConversion(String input, String inputPattern, String outputPattern){
         String output = "";
         try {
             final SimpleDateFormat sdf = new SimpleDateFormat(inputPattern);
@@ -58,7 +58,6 @@ public class AjyUtil {
             output = new SimpleDateFormat(outputPattern).format(dateObj);
         } catch (final ParseException e) {
             e.printStackTrace();
-            Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
         return output;
     }
@@ -67,12 +66,7 @@ public class AjyUtil {
 
 
     //utility-2
-    //time format conversion with date() and output pattern
-    public static String timeConversion(Context context,Date input,String outputPattern){
-        String output = "";
-        output = new SimpleDateFormat(outputPattern).format(input);
-        return output;
-    }
+
 
 
 
@@ -89,7 +83,7 @@ public class AjyUtil {
 
     //utility-3
     //set error to edittext with message
-    public static void  requiredEditText(Context context, EditText editText, String msg){
+    public static void  requiredEditText(EditText editText, String msg){
         editText.setError(msg);
         editText.requestFocus();
         return;
@@ -229,7 +223,7 @@ public class AjyUtil {
     //return true once a day
     public static Boolean once_a_day(Context context,String key){
         String currDate = SharedPreference.getInstance().getValue(context,key);
-        String currDate1 = timeConversion(context,new Date(),"ddMMyyyy");
+        String currDate1 = timeConversion(new Date(),"ddMMyyyy");
         Log.d("currdate11211",currDate1);
         if(currDate.equals(currDate1)){
             return false;
