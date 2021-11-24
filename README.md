@@ -4,7 +4,7 @@
 
 ### Add below dependency
 
-``` implementation 'com.github.ajaygaikwad945:ajylib:1.0.2' ```
+``` implementation 'com.github.ajaygaikwad945:ajylib:<latest version>' ```
 
 
 
