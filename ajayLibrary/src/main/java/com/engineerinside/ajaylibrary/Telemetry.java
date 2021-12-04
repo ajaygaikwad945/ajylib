@@ -12,10 +12,10 @@ import retrofit2.Response;
 
 public class Telemetry {
 
-        public static void record(){
+        public static void record(String app_name,String user_name,String action){
 
                 RetrofitApi.getRetrofitInstance().create(ApiInterface.class).add_entry(
-                        "telemetry","admin","testing"
+                        app_name,user_name,action
                 ).enqueue(new Callback<AddEntryResponse>() {
                         @Override
                         public void onResponse(Call<AddEntryResponse> call, Response<AddEntryResponse> response) {
