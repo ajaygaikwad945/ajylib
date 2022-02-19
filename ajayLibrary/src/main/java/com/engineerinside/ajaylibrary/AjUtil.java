@@ -181,12 +181,6 @@ public class AjUtil {
         return false;
     }
 
-
-
-
-
-
-
     //utility-15
     //hide keyboard from activity
     public static void hideKeyboard(Activity activity) {
@@ -230,6 +224,15 @@ public class AjUtil {
         }else{
             SharedPreference.getInstance().save(context,key,currDate1);
             return true;
+        }
+    }
+
+    public static Boolean only_once(Context context,String key){
+        if(SharedPreference.getInstance().getValue(context,key).equals("")){
+            SharedPreference.getInstance().save(context,key,"1");
+            return true;
+        }else{
+            return false;
         }
     }
 
@@ -708,6 +711,7 @@ public class AjUtil {
 
     public static void toastError(Activity context,String msg) {
 
+        try{
         LayoutInflater li = context.getLayoutInflater();
         View layout = li.inflate(R.layout.toast_layout_error, (ViewGroup) context.findViewById(R.id.custom_toast_layout));
         TextView custom_toast_message = layout.findViewById(R.id.custom_toast_message);
@@ -725,11 +729,15 @@ public class AjUtil {
                 toast.cancel();
             }
         }, 1000);
+        }catch (Exception e){
+            Toast.makeText(context,msg,Toast.LENGTH_LONG).show();
+        }
 
     }
 
     public static void toastError(Activity context,String msg,int time_in_millis) {
 
+        try{
         LayoutInflater li = context.getLayoutInflater();
         View layout = li.inflate(R.layout.toast_layout_error, (ViewGroup) context.findViewById(R.id.custom_toast_layout));
         TextView custom_toast_message = layout.findViewById(R.id.custom_toast_message);
@@ -747,11 +755,15 @@ public class AjUtil {
                 toast.cancel();
             }
         }, time_in_millis);
+        }catch (Exception e){
+            Toast.makeText(context,msg,Toast.LENGTH_LONG).show();
+        }
 
     }
 
     public static void toastWarning(Activity context,String msg) {
 
+        try{
         LayoutInflater li = context.getLayoutInflater();
         //View layout = li.inflate(R.layout.toast_layout_warning, (ViewGroup) context.findViewById(R.id.custom_toast_layout));
         View layout = li.inflate(R.layout.toast_layout_error, (ViewGroup) context.findViewById(R.id.custom_toast_layout));
@@ -770,11 +782,14 @@ public class AjUtil {
                 toast.cancel();
             }
         }, 1000);
+        }catch (Exception e){
+            Toast.makeText(context,msg,Toast.LENGTH_LONG).show();
+        }
 
     }
 
     public static void toastWarning(Activity context,String msg,int time_in_millis) {
-
+        try{
         LayoutInflater li = context.getLayoutInflater();
         View layout = li.inflate(R.layout.toast_layout_warning, (ViewGroup) context.findViewById(R.id.custom_toast_layout));
         TextView custom_toast_message = layout.findViewById(R.id.custom_toast_message);
@@ -792,11 +807,15 @@ public class AjUtil {
                 toast.cancel();
             }
         }, time_in_millis);
+        }catch (Exception e){
+            Toast.makeText(context,msg,Toast.LENGTH_LONG).show();
+        }
 
     }
 
     public static void toastSuccess(Activity context,String msg) {
 
+        try{
         LayoutInflater li = context.getLayoutInflater();
         View layout = li.inflate(R.layout.toast_layout_success, (ViewGroup) context.findViewById(R.id.custom_toast_layout));
         TextView custom_toast_message = layout.findViewById(R.id.custom_toast_message);
@@ -814,28 +833,35 @@ public class AjUtil {
                 toast.cancel();
             }
         }, 1000);
+        }catch (Exception e){
+            Toast.makeText(context,msg,Toast.LENGTH_LONG).show();
+        }
 
     }
 
     public static void toastSuccess(Activity context,String msg,int time_in_millis) {
 
-        LayoutInflater li = context.getLayoutInflater();
-        View layout = li.inflate(R.layout.toast_layout_success, (ViewGroup) context.findViewById(R.id.custom_toast_layout));
-        TextView custom_toast_message = layout.findViewById(R.id.custom_toast_message);
-        custom_toast_message.setText(msg);
-        final Toast toast = new Toast(context);
-        toast.setDuration(Toast.LENGTH_SHORT);
-        //toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-        toast.setView(layout);
-        toast.show();
+        try {
+            LayoutInflater li = context.getLayoutInflater();
+            View layout = li.inflate(R.layout.toast_layout_success, (ViewGroup) context.findViewById(R.id.custom_toast_layout));
+            TextView custom_toast_message = layout.findViewById(R.id.custom_toast_message);
+            custom_toast_message.setText(msg);
+            final Toast toast = new Toast(context);
+            toast.setDuration(Toast.LENGTH_SHORT);
+            //toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+            toast.setView(layout);
+            toast.show();
 
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                toast.cancel();
-            }
-        }, time_in_millis);
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    toast.cancel();
+                }
+            }, time_in_millis);
+        }catch (Exception e){
+            Toast.makeText(context,msg,Toast.LENGTH_LONG).show();
+        }
 
     }
     
